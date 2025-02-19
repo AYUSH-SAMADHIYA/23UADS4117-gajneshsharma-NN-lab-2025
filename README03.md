@@ -1,7 +1,9 @@
-*OBJECTIVE*
+OBJECTIVE:
+
 The objective of this code is to implement a simple neural network using NumPy to classify the "moons" dataset. The model is a basic feedforward neural network trained using backpropagation without any deep learning frameworks like TensorFlow or PyTorch.
 
-*Description of the Model*
+Description of the Model:
+
 The model consists of:
 - An input layer with 2 features.
 - One hidden layer with 8 neurons using the sigmoid activation function.
@@ -10,7 +12,9 @@ The model consists of:
 
 The dataset used is the "moons" dataset from sklearn.datasets, which consists of two interleaving half-circle clusters, making it a non-linearly separable problem.
 
-*Description of Code*
+
+Description of Code:
+
 1. *Data Preparation*
    - Generates the moons dataset with noise.
    - Splits the dataset into training and test sets.
@@ -32,13 +36,16 @@ The dataset used is the "moons" dataset from sklearn.datasets, which consists of
    - Rounds the sigmoid output to get binary classifications.
    - Computes accuracy as the percentage of correctly classified points.
    - Prints final accuracy and predictions.
+     
 
-*Performance Evaluation*
+Performance Evaluation:
+
 - The model achieves reasonable accuracy on the test set, demonstrating its ability to classify the moon dataset.
 - Since the sigmoid activation and MSE loss are used, the model may suffer from vanishing gradient issues.
 - Performance could be improved using cross-entropy loss and better activation functions like ReLU for hidden layers.
 
-*MY COMMENTS*
+MY COMMENTS:
+
 - The implementation effectively demonstrates the principles of neural networks without relying on deep learning frameworks.
 - Using StandardScaler helps improve convergence and model performance.
 - The choice of MSE as the loss function is suboptimal for classification; using binary cross-entropy could improve results.
