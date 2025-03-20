@@ -52,3 +52,11 @@ After training for 10 epochs, the model achieves:
 Training Accuracy: ~98%
 Test Accuracy: ~97%
 The model effectively classifies handwritten digits with high accuracy, demonstrating the power of deep learning for image recognition tasks.
+
+
+MY COMMENTS:
+The model is simple but effective for MNIST digit recognition.
+Using TensorFlow v1 is educational, though migrating to v2 or Keras is recommended for modern practices.
+Good use of batching and preprocessing.
+Accuracy is strong considering the simplicity of the architecture.
+Could improve with dropout or regularization to avoid overfitting, and validation split for more robust training.
