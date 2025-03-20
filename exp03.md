@@ -55,6 +55,7 @@ The model effectively classifies handwritten digits with high accuracy, demonstr
 
 
 MY COMMENTS:
+
 The model is simple but effective for MNIST digit recognition.
 Using TensorFlow v1 is educational, though migrating to v2 or Keras is recommended for modern practices.
 Good use of batching and preprocessing.
