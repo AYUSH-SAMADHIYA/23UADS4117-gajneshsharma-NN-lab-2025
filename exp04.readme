@@ -1,0 +1,49 @@
+OBJECTIVE:
+To implement and evaluate a simple feedforward neural network using TensorFlow v1 on the MNIST dataset, and to analyze the effects of different activation functions and hidden layer sizes through hyperparameter tuning.
+
+Description of the Model
+The model is a single hidden-layer feedforward neural network (also known as a multilayer perceptron) designed for image classification on the MNIST dataset. It takes flattened 28x28 grayscale images as input, processes them through one hidden layer using different activation functions (ReLU, Sigmoid, Tanh), and outputs a 10-dimensional vector representing class probabilities for the digits (0–9).
+
+
+Key points:
+
+Input Layer: 784 neurons (28×28 pixels)
+Hidden Layer: Variable size (256, 128, or 64 neurons)
+Output Layer: 10 neurons with softmax activation
+Activation functions tested: ReLU, Sigmoid, Tanh
+
+
+Description of Code:
+
+Libraries Used: TensorFlow v1 (compat mode), TensorFlow Datasets, NumPy, Matplotlib, Seaborn, scikit-learn
+Data: MNIST dataset, preprocessed using normalization, reshaping, and one-hot encoding.
+Pipeline:
+Data loading and preprocessing.
+Hyperparameter tuning with nested loops over activation functions and hidden layer sizes.
+Neural network built using TensorFlow placeholders and variables.
+Training using the Adam optimizer and softmax cross-entropy loss.
+Performance evaluation includes accuracy calculation and confusion matrix plotting.
+Visualization:
+Loss and accuracy curves per epoch for each model configuration.
+Confusion matrix for final model predictions on test data.
+
+
+Performance Evaluation:
+
+Evaluated using accuracy on the test set and execution time for each configuration.
+Results are printed at the end summarizing:
+Activation function
+Hidden layer size
+Final test accuracy
+Training and evaluation time
+Confusion matrix provides insight into per-class performance and misclassifications.
+Loss and accuracy plots show learning behavior across epochs.
+
+
+MY COMMENTS:
+The code provides a clear and practical demonstration of hyperparameter tuning in neural networks.
+TensorFlow v1 is used, which is outdated—migrating to TensorFlow v2 with Keras would improve readability and maintainability.
+Using only one hidden layer limits model complexity; deeper networks could improve performance.
+It’s great that the code visualizes both training metrics and confusion matrices—very helpful for interpretation.
+Parallel training (e.g., across activation functions) could speed up experimentation.
+Consider adding early stopping or validation loss monitoring to prevent overfitting in larger models.
