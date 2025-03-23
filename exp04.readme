@@ -41,9 +41,16 @@ Loss and accuracy plots show learning behavior across epochs.
 
 
 MY COMMENTS:
+
 The code provides a clear and practical demonstration of hyperparameter tuning in neural networks.
-TensorFlow v1 is used, which is outdated—migrating to TensorFlow v2 with Keras would improve readability and maintainability.
 Using only one hidden layer limits model complexity; deeper networks could improve performance.
-It’s great that the code visualizes both training metrics and confusion matrices—very helpful for interpretation.
-Parallel training (e.g., across activation functions) could speed up experimentation.
-Consider adding early stopping or validation loss monitoring to prevent overfitting in larger models.
+
+Impact of Hidden Layer Neuron Count:
+256 neurons: Higher capacity to learn complex patterns; may risk overfitting if not regularized.
+128 neurons: Balanced choice; performs well while maintaining moderate complexity.
+64 neurons: Faster to train, uses less memory but may underfit on complex patterns
+
+Training Time Considerations:
+
+Increasing batch size reduces the number of iterations per epoch → faster training.
+Increasing epochs increases the number of full passes over data → longer total training time.
