@@ -4,11 +4,11 @@ To implement a Multi-Layer Perceptron (MLP) using NumPy and demonstrate its abil
 ## Description of the Model:
 
 A Multi-Layer Perceptron (MLP) is a type of artificial neural network consisting of an input layer, one or more hidden layers, and an output layer. It uses non-linear activation functions to learn complex patterns in data. For this task, we implement an MLP with:
--**Input layer:** Two neurons representing the binary inputs.
--**Hidden layer:** Four neurons implementing AND, OR, and NOR functions.
--**Output layer:** A single neuron combining hidden outputs to compute XOR.
--**Activation Function:** Uses a step function to determine output.
--**Forward Propagation:** Computes output at each layer using dot products and activation functions.
+-Input layer: Two neurons representing the binary inputs.
+-Hidden layer: Four neurons implementing AND, OR, and NOR functions.
+-Output layer: A single neuron combining hidden outputs to compute XOR.
+-Activation Function: Uses a step function to determine output.
+-Forward Propagation: Computes output at each layer using dot products and activation functions.
 
 
 ## Description of Code:
