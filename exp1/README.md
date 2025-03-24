@@ -1,7 +1,7 @@
-Objective:
+## Objective:
 To implement the Perceptron Learning Algorithm using NumPy in Python and evaluate its performance on NAND and XOR truth tables. The goal is to understand the capability of a single-layer perceptron in solving linearly separable and non-linearly separable problems.
 
-Description of the Model:
+## Description of the Model:
 A perceptron is a simple type of artificial neural network that can classify data into two categories based on a weighted sum of inputs. The learning process involves adjusting the weights based on errors until the model converges. Key components include:
 
 Step Activation Function: Determines output as 0 or 1 based on thresholding.
