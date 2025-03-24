@@ -50,6 +50,12 @@ Impact of Hidden Layer Neuron Count:
 128 neurons: Balanced choice; performs well while maintaining moderate complexity.
 64 neurons: Faster to train, uses less memory but may underfit on complex patterns
 
+Impact of Activation Functions:
+ReLU (Rectified Linear Unit): Fast and efficient,Helps avoid vanishing gradient,Performs best in deeper and wide networks.
+Sigmoid: Slower convergence,Suffers from vanishing gradient.
+Tanh: Better than sigmoid due to output in range [-1, 1],Still slower and prone to saturation compared to ReLU.
+
+
 Training Time Considerations:
 
 Increasing batch size reduces the number of iterations per epoch → faster training.
