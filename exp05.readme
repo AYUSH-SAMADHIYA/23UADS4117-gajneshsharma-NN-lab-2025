@@ -1,0 +1,92 @@
+OBJECTIVE:
+
+This project implements a Convolutional Neural Network (CNN) for classifying images from the Fashion MNIST dataset. The main goal is to experiment with different hyperparameters (filter size, regularization strength, batch size, and optimizer) to analyze their impact on model performance.
+
+Description of the Model:
+
+The model is a Convolutional Neural Network (CNN) built using TensorFlow and Keras. It follows a standard CNN architecture designed for image classification:
+
+1. Convolutional Layers:
+The model starts with a Conv2D layer with 32 filters and a kernel size of either 3x3 or 5x5 (depending on the hyperparameter setting).
+A second Conv2D layer with 64 filters is added.
+Both convolutional layers use ReLU activation and L2 regularization (with values 0.0001 or 0.001) to prevent overfitting.
+
+2. Pooling Layers:
+Each convolutional layer is followed by a MaxPooling2D layer (2x2) to reduce spatial dimensions and computational load.
+
+3. Fully Connected Layers:
+After flattening the feature maps, a Dense layer with 128 neurons and ReLU activation is added to learn high-level features.
+The final output layer has 10 neurons with softmax activation, corresponding to the 10 classes in Fashion MNIST.
+
+4. Optimizer & Loss Function:
+The model uses either Adam or SGD optimizer (depending on the experiment).
+The loss function is sparse_categorical_crossentropy since this is a multi-class classification problem.
+
+
+
+Description of Code:
+
+1. Data Loading & Preprocessing:
+The Fashion MNIST dataset is loaded using keras.datasets.fashion_mnist.
+The pixel values of images are normalized (divided by 255.0) to bring them to the range [0,1].
+The dataset is reshaped to add a channel dimension (from (28,28) to (28,28,1)) for compatibility with the CNN.
+
+
+2. Defining the CNN Model:
+A function create_model is implemented, allowing customization of hyperparameters:
+filter_size: Defines kernel size (3x3 or 5x5).
+regularization: Applies L2 regularization to prevent overfitting.
+optimizer: Defines the optimization algorithm (Adam or SGD).
+The model is compiled with sparse_categorical_crossentropy loss and accuracy as the evaluation metric.
+
+3. Hyperparameter Tuning & Training:
+Four hyperparameters are tested in various combinations:
+Filter sizes: [3, 5]
+Regularization values: [0.0001, 0.001]
+Batch sizes: [32, 64]
+Optimizers: ['adam', 'sgd']
+
+A nested loop iterates over all possible configurations, training a model for each.
+Each model is trained for 5 epochs with validation data included.
+The test accuracy for each model is recorded and printed.
+
+4. Performance Visualization:
+The validation accuracy for each hyperparameter combination is plotted using Matplotlib.
+This helps visualize how different configurations affect the model’s performance.
+
+
+
+Performance Evaluation:
+
+Each model's performance is evaluated based on validation accuracy.
+Test accuracy is recorded for all experiments.
+A plot is generated to compare how hyperparameter choices affect validation accuracy across epochs.
+
+
+
+MY COMMENTS:
+
+Impact of Hyperparameters:
+Filter Size (3x3 vs. 5x5):
+A larger filter size (5x5) captures more spatial details but increases computational cost and may lead to overfitting.
+A smaller filter size (3x3) is more efficient and often generalizes better.
+
+Regularization (0.0001 vs. 0.001):
+Higher regularization (0.001) prevents overfitting but might restrict learning.
+Lower regularization (0.0001) allows the model to learn more patterns but risks overfitting.
+
+Batch Size (32 vs. 64):
+Larger batch size (64) speeds up training but may generalize poorly.
+Smaller batch size (32) generalizes better but results in slower convergence.
+
+Optimizer (Adam vs. SGD):
+Adam optimizer converges faster but may get stuck in local minima.
+SGD optimizer is more stable but requires careful tuning of the learning rate.
+
+Limitations:
+Limited Training Time: The model is only trained for 5 epochs; longer training could improve accuracy.
+
+Limited Hyperparameter Search: Only a few values for each hyperparameter are tested. A broader search (grid search or Bayesian optimization) could yield better results.
+
+Dataset Simplicity: The model is designed for grayscale images; performance on color datasets (e.g., CIFAR-10) may differ significantly.
+
