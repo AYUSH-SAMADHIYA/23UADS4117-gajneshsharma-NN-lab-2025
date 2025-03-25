@@ -57,6 +57,11 @@ Tanh: Better than sigmoid due to output in range [-1, 1],Still slower and prone 
 
 
 Training Time Considerations:
-
 Increasing batch size reduces the number of iterations per epoch → faster training.
 Increasing epochs increases the number of full passes over data → longer total training time.
+
+
+Limitations of the Model:
+Uses only one hidden layer — limits representational power.
+No regularization — may overfit with larger hidden layers.
+No early stopping or learning rate decay — could optimize training further.
